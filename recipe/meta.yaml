@@ -1,8 +1,8 @@
 {% set name = "ZODB" %}
-{% set version = "5.2.4" %}
+{% set version = "5.3.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "ecc1c9c1ef494a70ccfc03184bccb72421d72233e9dc4742ac58f5396d04cadf" %}
+{% set hash = "633c2f89481d8ebc55639b59216f7d16d07b44a94758850c0b887006967214f3" %}
 {% set build = 0 %}
 
 package:
