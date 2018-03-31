@@ -1,8 +1,8 @@
 {% set name = "ZODB" %}
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "633c2f89481d8ebc55639b59216f7d16d07b44a94758850c0b887006967214f3" %}
+{% set hash = "0b306042f4f0d558a477d65c34b0dd6e7604c6e583f55dfda52befa2fa13e076" %}
 {% set build = 0 %}
 
 package:
@@ -23,7 +23,7 @@ build:
     - fstail=ZODB.scripts.fstail:Main
     - repozo=ZODB.scripts.repozo:main
 
-  number: {{ build }}
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
