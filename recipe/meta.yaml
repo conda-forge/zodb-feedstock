@@ -3,7 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "0b306042f4f0d558a477d65c34b0dd6e7604c6e583f55dfda52befa2fa13e076" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -15,6 +15,7 @@ source:
   {{ hash_type }}: {{ hash }}
 
 build:
+  noarch: python
   preserve_egg_dir: True
   entry_points:
     - fsdump=ZODB.FileStorage.fsdump:main
@@ -23,11 +24,12 @@ build:
     - fstail=ZODB.scripts.fstail:Main
     - repozo=ZODB.scripts.repozo:main
 
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
 
