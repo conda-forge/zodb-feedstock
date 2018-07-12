@@ -3,7 +3,6 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "0b306042f4f0d558a477d65c34b0dd6e7604c6e583f55dfda52befa2fa13e076" %}
-{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +10,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash }}
 
 build:
@@ -29,9 +28,8 @@ build:
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
+    - pip
 
   run:
     - python
