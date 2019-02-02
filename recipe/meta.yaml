@@ -1,8 +1,8 @@
 {% set name = "ZODB" %}
-{% set version = "5.4.0" %}
+{% set version = "5.5.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "0b306042f4f0d558a477d65c34b0dd6e7604c6e583f55dfda52befa2fa13e076" %}
+{% set hash = "20155942fa326e89ad8544225bafd74237af332ce9d7c7105a22318fe8269666" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,7 @@ build:
     - fstail=ZODB.scripts.fstail:Main
     - repozo=ZODB.scripts.repozo:main
 
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
