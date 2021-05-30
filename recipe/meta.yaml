@@ -23,16 +23,16 @@ build:
     - fstail=ZODB.scripts.fstail:Main
     - repozo=ZODB.scripts.repozo:main
 
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
 
   run:
-    - python
+    - python >=3.6
     - setuptools
     - persistent >=4.2.0
     - btrees >=4.2.0
@@ -70,3 +70,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
