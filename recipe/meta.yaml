@@ -1,21 +1,16 @@
 {% set name = "ZODB" %}
-{% set version = "5.5.1" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "20155942fa326e89ad8544225bafd74237af332ce9d7c7105a22318fe8269666" %}
+{% set version = "5.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4654fb543393533291cfbf8adfb4ea2658ff385871d4b926d725508142cb07fe
 
 build:
   noarch: python
-  preserve_egg_dir: True
   entry_points:
     - fsdump=ZODB.FileStorage.fsdump:main
     - fsoids=ZODB.scripts.fsoids:main
@@ -24,15 +19,15 @@ build:
     - repozo=ZODB.scripts.repozo:main
 
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
 
   run:
-    - python
+    - python >=3.6
     - setuptools
     - persistent >=4.2.0
     - btrees >=4.2.0
@@ -57,11 +52,15 @@ test:
     # - fsrefs --help  # no support for --help
     # - fstail --help  # no support for --help
     - repozo --help
+    - pip check
+  
+  requires: 
+    - pip
 
 about:
   home: http://www.zodb.org/
   license_file: LICENSE.txt
-  license: ZPL 2.1
+  license: ZPL-2.1
   license_family: OTHER
   summary: 'ZODB, a Python object-oriented database'
   dev_url: https://github.com/zopefoundation/ZODB
@@ -70,3 +69,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
