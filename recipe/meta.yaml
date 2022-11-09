@@ -1,5 +1,5 @@
 {% set name = "ZODB" %}
-{% set version = "5.7.0" %}
+{% set version = "5.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fa40bbc05ecda1ec2435cd0c6dd02a13b7698460558a4604366f6a0a68401cd3
+  sha256: 28dba00ef626de10589ededab85ad0f0edf72925e75d36a15c99c63ac05fe764
 
 build:
   noarch: python
