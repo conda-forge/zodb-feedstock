@@ -1,11 +1,11 @@
-About zodb
-==========
+About zodb-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zodb-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.zodb.org/
 
 Package license: ZPL-2.1
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zodb-feedstock/blob/main/LICENSE.txt)
 
 Summary: ZODB, a Python object-oriented database
 
