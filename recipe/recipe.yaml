@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ZODB
-  version: "6.3"
+  version: "6.4"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | lower }}-${{ version }}.tar.gz
-  sha256: 2da749cf21c709058b2957bb1bc3d3a5d6e86b456246cb48acb5197173367c9f
+  sha256: bdc5de730bdc624d1eee0d53d66ad80d58f393080cab5c96e5d7ffeee5dba341
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
